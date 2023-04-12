@@ -30,7 +30,7 @@ import { deleteLocalFiles, filterImageFromURL } from './util/util'
 
   /**************************************************************************** */
 
-  app.get('/filteredimage', async (request: string, response :string) => {
+  app.get('/filteredimage', async (request: Request, response: Response) => {
     const image_url: string = request.query.image_url.toString();
     if (!image_url){
       response.status(400).send('Image url is required');
@@ -47,7 +47,7 @@ import { deleteLocalFiles, filterImageFromURL } from './util/util'
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( request: string, response: string) => {
+  app.get( "/", async ( request: Request, response: Response) => {
     response.send("try GET /filteredimage?image_url={{}}")
   } );
   
